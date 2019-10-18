@@ -8,7 +8,9 @@ import {Post, PostList} from '../../models/Posts';
 })
 export class PostsComponent implements OnInit {
 
+  displayedColumns: string[] = ['Title','Modify','Description'];
   data: PostList[] = [];
+  rowCount: any;
   isLoadingResults = true;
   constructor(private api: ApiService) { }
 
@@ -16,12 +18,14 @@ export class PostsComponent implements OnInit {
     this.api.getListPosts()
     .subscribe(res => {
       this.data = res;
-      console.log(this.data);
+      this.rowCount = this.data.length % 4 === 0 ? Math.floor(this.data.length / 4) : Math.floor(this.data.length / 4) + 1;
+      this.rowCount = Array.apply(null, {length: this.rowCount}).map(Number.call, Number)
+      console.log(this.data.length);
+      console.log(this.rowCount);
       this.isLoadingResults = false;
     }, err => {
       console.log(err);
       this.isLoadingResults = false;
     });
   }
-
 }

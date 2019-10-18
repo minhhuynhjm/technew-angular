@@ -1,0 +1,39 @@
+<!-- <table id="category">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Title</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of data; index as i" [routerLink]="['/post-detail', item.PostId]">
+        <td>{{ i+1 }}</td>
+        <td>{{ item.PostTitle }}</td>
+        <td>{{ item.PostDecription }}</td>
+      </tr>
+    </tbody>
+</table> -->
+
+<table *ngIf="table" mat-table [dataSource]="table.dataSource" class="mat-elevation-z8">
+    <!-- Position Column -->
+    <ng-container matColumnDef="Id">
+      <th mat-header-cell *matHeaderCellDef> ID </th>
+      <td mat-cell *matCellDef="let element; let i = index"> {{i+1}} </td>
+    </ng-container>
+  
+    <!-- Name Column -->
+    <ng-container matColumnDef="Title">
+      <th mat-header-cell *matHeaderCellDef> TITLE </th>
+      <td mat-cell *matCellDef="let element"> {{element.PostTitle}} </td>
+    </ng-container>
+  
+    <!-- Weight Column -->
+    <ng-container matColumnDef="Description">
+      <th mat-header-cell *matHeaderCellDef> DESCRIPTION </th>
+      <td mat-cell *matCellDef="let element"> {{element.PostDecription}} </td>
+    </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="table.displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: table.displayedColumns; "></tr>
+  </table>
