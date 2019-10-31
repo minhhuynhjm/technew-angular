@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ApiService } from '../api.service';
 import {Post, PostList} from '../../models/Posts';
 @Component({
@@ -7,14 +7,18 @@ import {Post, PostList} from '../../models/Posts';
   styleUrls: ['./posts.component.scss']
 })
 export class PostsComponent implements OnInit {
-
+  @Input() numberCount: string ='';
+  
   displayedColumns: string[] = ['Title','Modify','Description'];
   data: PostList[] = [];
   rowCount: any;
   isLoadingResults = true;
   constructor(private api: ApiService) { }
 
+
   ngOnInit() {
+    console.log(this.numberCount);
+
     this.api.getListPosts()
     .subscribe(res => {
       this.data = res;

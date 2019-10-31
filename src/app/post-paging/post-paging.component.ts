@@ -43,6 +43,7 @@ export class PostPagingComponent implements OnInit {
       });
   }
   FetchData(event?: PageEvent){
+    console.log(event);
     this.getPagination(this.id, event.pageIndex + 1)
   }
 }

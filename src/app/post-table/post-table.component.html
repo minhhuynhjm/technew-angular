@@ -14,21 +14,21 @@
       </tr>
     </tbody>
 </table> -->
+<mat-form-field>
+  <input matInput (keyup)="applyFilter($event)" placeholder="Filter">
+</mat-form-field>
 
-<table *ngIf="table" mat-table [dataSource]="table.dataSource" class="mat-elevation-z8">
-    <!-- Position Column -->
+<!-- <table *ngIf="table" mat-table [dataSource]="table.dataSource" class="mat-elevation-z8">
     <ng-container matColumnDef="Id">
       <th mat-header-cell *matHeaderCellDef> ID </th>
       <td mat-cell *matCellDef="let element; let i = index"> {{i+1}} </td>
     </ng-container>
   
-    <!-- Name Column -->
     <ng-container matColumnDef="Title">
       <th mat-header-cell *matHeaderCellDef> TITLE </th>
       <td mat-cell *matCellDef="let element"> {{element.PostTitle}} </td>
     </ng-container>
   
-    <!-- Weight Column -->
     <ng-container matColumnDef="Description">
       <th mat-header-cell *matHeaderCellDef> DESCRIPTION </th>
       <td mat-cell *matCellDef="let element"> {{element.PostDecription}} </td>
@@ -36,4 +36,14 @@
   
     <tr mat-header-row *matHeaderRowDef="table.displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: table.displayedColumns; "></tr>
-  </table>
+  </table> -->
+
+  <hot-table
+      class="hot"
+      [data]="table.dataSource"
+      [colHeaders]="true"
+      [rowHeaders]="true">
+      <hot-column data="CategoryId" [readOnly]="true" title="ID"></hot-column>
+        <hot-column data="CategoryName" title="Full name"></hot-column>
+        <hot-column data="PostTitle" title="Street name"></hot-column>
+    </hot-table>

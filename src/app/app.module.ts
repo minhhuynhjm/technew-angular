@@ -16,6 +16,8 @@ import { EditorModule } from '@tinymce/tinymce-angular';
 import { PostTableComponent } from './post-table/post-table.component';
 import { PostPagingComponent } from './post-paging/post-paging.component';
 import {MatPaginatorModule} from '@angular/material/paginator';
+import { HotTableModule } from '@handsontable/angular';
+import * as Handsontable from 'handsontable';
 
 @NgModule({
   declarations: [
@@ -42,7 +44,8 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     FlexLayoutModule,
     MatToolbarModule,
     EditorModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    HotTableModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

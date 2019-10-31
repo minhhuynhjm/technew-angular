@@ -19,7 +19,7 @@
     </ng-container>
   
     <tr mat-header-row *matHeaderRowDef="table.displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: table.displayedColumns; "></tr>
+    <tr mat-row *matRowDef="let row; columns: table.displayedColumns;" [routerLink]="['/post-detail', row.PostId]"></tr>
   </table>
    
    <mat-paginator [length]="length"
