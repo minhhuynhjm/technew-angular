@@ -13,6 +13,8 @@ const apiUrl = 'http://technews.com/api/';//http://localhost:50718/
 const apiPosts = apiUrl + 'posts';
 const apiPostByCategory = apiPosts + '/Categories';
 const apiPaging = apiPosts + '/Category';
+const apiTest = 'http://192.168.66.36/api/export';
+//const apiTest = 'http://192.168.50.65/api/export';
 @Injectable({
   providedIn: 'root'
 })
@@ -65,10 +67,10 @@ export class ApiService {
     );
   }
 
-  addPost(post): Observable<Post> {
-    return this.http.post<Post>(apiPosts, post, httpOptions).pipe(
-      tap((post: Post) => console.log('added post')),
-      catchError(this.handleError<Post>('error add Post'))
+  addPost(post): Observable<any> {
+    return this.http.post<any>(apiTest, post, httpOptions).pipe(
+      // tap((post: Post) => console.log('added post')),
+      // catchError(this.handleError<Post>('error add Post'))
     );
   }
 }

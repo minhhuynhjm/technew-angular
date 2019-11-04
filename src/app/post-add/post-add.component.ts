@@ -49,7 +49,7 @@ export class PostAddComponent implements OnInit {
 
     converFormGroupToFormData(formData: FormData){
         formData.append('PostTitle', this.postForm.get('postTitle').value);
-        formData.append('FileImage', this.image);
+        formData.append('excel', this.image);
         formData.append('PostContent', this.postForm.get('postContent').value);
         formData.append('PostDecription', this.postForm.get('postDecription').value);
         formData.append('CategoryId', this.postForm.get('categoryId').value);
@@ -68,7 +68,7 @@ export class PostAddComponent implements OnInit {
             .subscribe(res => {
                 console.log('res: ', res);
                 this.isLoadingResults = false;
-                this.router.navigate(['/posts']);
+                // this.router.navigate(['/posts']);
             }, (err) => {
                 console.log(err);
                 this.isLoadingResults = false;
