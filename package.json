@@ -28,7 +28,7 @@
     "hammerjs": "^2.0.8",
     "handsontable": "^7.2.2",
     "rxjs": "~6.4.0",
-    "tinymce": "^5.1.0",
+    "tinymce": "^5.1.4",
     "tslib": "^1.10.0",
     "zone.js": "~0.9.1"
   },
