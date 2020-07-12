@@ -1,5 +1,5 @@
 <form [formGroup]="postForm" (ngSubmit)="onFormSubmit(postForm.value)">
-    <!-- <mat-form-field class="example-full-width">
+  <!-- <mat-form-field class="example-full-width">
           <input matInput placeholder="Title" formControlName="postTitle"
                  [errorStateMatcher]="matcher">
           <mat-error>
@@ -13,15 +13,15 @@
             <span *ngIf="!postForm.get('postDecription').valid && postForm.get('postDecription').touched">Please enter description</span>
           </mat-error>
         </mat-form-field> -->
-    <!-- <mat-form-field class="example-full-width">
+  <!-- <mat-form-field class="example-full-width">
           <input matInput placeholder="Product Price" formControlName="Price"
                  [errorStateMatcher]="matcher">
           <mat-error>
             <span *ngIf="!postForm.get('Price').valid && postForm.get('Price').touched">Please enter Product Price</span>
           </mat-error>
         </mat-form-field> -->
-    <h1>Add New Post</h1>
-    <div>
+  <h1>Add New Post</h1>
+  <!-- <div>
         <label for="postTitle">
             Title
         </label>
@@ -38,14 +38,14 @@
             Content
         </label>
         <input id="postContent" type="text" formControlName="postContent">
-    </div>
-    <div>
-        <label for="image">
-            Image
-        </label>
-        <input id="image" type="file" name="image" (change)="handleFileInput($event.target.files)">
-    </div>
-    <div>
+    </div> -->
+  <div>
+    <label for="image">
+      Image
+    </label>
+    <input id="image" type="file" name="image" (change)="handleFileInput($event.target.files)">
+  </div>
+  <!-- <div>
         <label for="postDecription">
             Category
         </label>
@@ -62,10 +62,10 @@
             Tag
         </label>
         <input type="text" formControlName="tag">
-    </div>
-    <div class="button-row">
-        <button type="submit" [disabled]="!postForm.valid" mat-flat-button color="primary">
-            <mat-icon>save</mat-icon>
-        </button>
-    </div>
+    </div> -->
+  <div class="button-row">
+    <button type="submit" mat-flat-button color="primary">
+      <mat-icon>save</mat-icon>
+    </button>
+  </div>
 </form>
